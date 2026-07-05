@@ -1,0 +1,11 @@
+/* Zakładka: PRZEPISY — siatka kart, chipy kategorii */
+/* PRZEPISY */
+.sp-rgrid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+.sp-recipe{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 4px 16px rgba(120,100,60,.05)}
+.sp-recipe h3{font-size:18.5px;display:flex;align-items:center;gap:10px}
+.sp-recipe h3 .em{font-size:21px}
+.sp-recipe .rintro{color:var(--muted);font-size:15px;margin:8px 0 4px}
+.sp-rnote{display:flex;gap:9px;align-items:flex-start;font-size:14px;color:var(--muted);background:var(--bg);border:1px dashed var(--line);border-radius:11px;padding:10px 12px;margin-top:10px}
+.sp-catchips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.sp-catchip{font-family:'Fredoka';font-weight:500;font-size:13.5px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:7px 14px;border-radius:999px;transition:.15s;display:flex;gap:6px;align-items:center}
+.sp-catchip.act{background:var(--ink);color:#fff;border-color:var(--ink)}

@@ -1,0 +1,92 @@
+/* Zakładka: PLAC ZABAW — symulatory (wspólne + per symulator) */
+/* PLAC ZABAW — wspólne */
+.sp-play{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin:18px 0;box-shadow:0 6px 22px rgba(120,100,60,.07)}
+.sp-play h3{font-size:18px;margin-bottom:4px}
+.sp-play .hint{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+.sp-stage{display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:center}
+.sp-controls{display:flex;flex-direction:column;gap:16px;max-width:380px;margin:14px auto 0}
+.sp-ctl label{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:6px}
+.sp-ctl label span{font-family:'JetBrains Mono';color:var(--accent,var(--drive))}
+.sp-range{-webkit-appearance:none;width:100%;height:8px;border-radius:8px;background:var(--accent-soft,var(--drive-soft));outline:none}
+.sp-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--accent,var(--drive));cursor:pointer;border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.sp-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--accent,var(--drive));cursor:pointer;border:3px solid #fff}
+.sp-modebtns{display:flex;gap:8px;justify-content:center;margin-bottom:16px;flex-wrap:wrap}
+.sp-modebtn{font-family:'Fredoka';font-weight:500;font-size:14px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:8px 16px;border-radius:999px;transition:.15s}
+.sp-modebtn.act{background:var(--accent,var(--drive));color:#fff;border-color:var(--accent,var(--drive))}
+.sp-liveline{position:relative;background:var(--code-bg);color:var(--code-ink);border-radius:11px;padding:11px 44px 11px 14px;margin-top:18px;font-family:'JetBrains Mono';font-size:13px;text-align:center;overflow-x:auto}
+.sp-liveline b{color:#9BC0E0;font-weight:500}
+.sp-liveline .num{color:#E2B84B}
+.sp-status{text-align:center;font-family:'Fredoka';font-weight:500;font-size:17px;margin:18px 0 4px;color:var(--accent,var(--drive))}
+.sp-reading{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:14px 0 0}
+.sp-read{background:var(--bg);border:1px solid var(--line);border-radius:13px;padding:10px 18px;text-align:center;min-width:120px}
+.sp-read .rl{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.sp-read .rv{font-family:'JetBrains Mono';font-size:21px;font-weight:500;color:var(--accent,var(--ink))}
+.sp-read .ru{font-size:11px;color:var(--muted)}
+
+/* PLAC: jazda */
+.sp-robot{position:relative;width:150px;height:160px;flex:0 0 auto;transition:transform .4s ease}
+.sp-body{position:absolute;left:34px;top:30px;width:82px;height:100px;border-radius:18px;background:var(--drive-soft);border:2px solid var(--drive)}
+.sp-eye{position:absolute;top:46px;width:10px;height:10px;border-radius:50%;background:var(--drive)}
+.sp-wheel{position:absolute;top:40px;width:22px;height:70px;border-radius:8px;background:#3c3a37;overflow:hidden}
+.sp-wheel .tread{position:absolute;left:0;right:0;height:200%;background:repeating-linear-gradient(0deg,#3c3a37 0 7px,#6a6660 7px 11px)}
+.sp-meter{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:96px}
+.sp-meter .lab{font-weight:700;font-size:13px;color:var(--muted)}
+.sp-bar{width:18px;height:120px;border-radius:10px;background:#ECE8DC;position:relative;overflow:hidden}
+.sp-fill{position:absolute;left:0;right:0;bottom:50%;background:var(--drive);transition:.25s}
+@keyframes sp-roll{to{transform:translateY(-50%)}}
+
+/* PLAC: pojedynczy silnik (tarcza) */
+.sp-dial{position:relative;width:170px;height:170px;flex:0 0 auto}
+.sp-dial-face{position:absolute;inset:0;border-radius:50%;background:var(--motor-soft);border:2px solid var(--motor);box-shadow:inset 0 -4px 0 rgba(0,0,0,.05)}
+.sp-dial-rotor{position:absolute;inset:14px;border-radius:50%;background:var(--panel);border:2px solid var(--motor);transition:transform .2s linear}
+.sp-dial-hub{position:absolute;left:50%;top:50%;width:46px;height:46px;transform:translate(-50%,-50%);border-radius:50%;background:var(--motor-soft);border:2px solid var(--motor)}
+.sp-dial-hole{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--motor);opacity:.55}
+.sp-dial-needle{position:absolute;left:50%;top:8px;width:5px;height:26px;margin-left:-2.5px;border-radius:4px;background:var(--motor)}
+.sp-dial-zero{position:absolute;left:50%;top:-7px;transform:translateX(-50%);font-family:'JetBrains Mono';font-size:11px;color:var(--muted)}
+
+/* PLAC: odległość */
+.sp-dist-scene{position:relative;height:130px;background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0 0 6px}
+.sp-dist-bot{position:absolute;left:10px;bottom:14px;width:74px;height:64px}
+.sp-dist-body{position:absolute;inset:0 14px 0 0;border-radius:12px;background:var(--sense-soft);border:2px solid var(--sense)}
+.sp-dist-eye{position:absolute;right:2px;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--sense)}
+.sp-dist-floor{position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(90deg,#E7E1D4 0 18px,#EFEAE0 18px 36px)}
+.sp-wave{position:absolute;border:2px solid var(--sense);border-left:none;border-radius:0 50% 50% 0;opacity:0;width:26px;height:44px}
+@keyframes sp-ping{0%{opacity:.7;transform:translateX(0) scale(.5)}100%{opacity:0;transform:translateX(56px) scale(1.15)}}
+.sp-wall{position:absolute;top:10px;bottom:12px;width:18px;background:repeating-linear-gradient(45deg,#C2895C 0 9px,#B07A4F 9px 18px);border-radius:5px;border:2px solid #A06D44;transition:left .12s linear}
+
+/* PLAC: kolor */
+.sp-color-stage{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:6px}
+.sp-color-head{width:72px;height:54px;border-radius:12px 12px 4px 4px;background:var(--sense-soft);border:2px solid var(--sense);position:relative;z-index:2}
+.sp-color-lens{position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;border:3px solid var(--sense);transition:background .2s, box-shadow .2s}
+.sp-color-tile{width:150px;height:34px;border-radius:9px;margin-top:18px;border:1px solid rgba(0,0,0,.12);transition:background .2s}
+.sp-tilebtns{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:16px}
+.sp-tilebtn{width:34px;height:34px;border-radius:9px;border:2px solid rgba(0,0,0,.12);cursor:pointer;transition:transform .12s}
+.sp-tilebtn:hover{transform:scale(1.12)}
+.sp-tilebtn.act{outline:3px solid var(--ink);outline-offset:2px}
+
+/* PLAC: siła */
+.sp-force-stage{display:flex;align-items:flex-end;justify-content:center;height:130px;margin-bottom:6px}
+.sp-force-sensor{position:relative;width:90px;display:flex;flex-direction:column;align-items:center}
+.sp-force-cap{width:54px;height:26px;border-radius:9px 9px 3px 3px;background:#C76C5E;border:2px solid #A85546;transition:transform .1s}
+.sp-force-spring{width:34px;background:repeating-linear-gradient(0deg,#9A8F7C 0 4px,transparent 4px 9px);transition:height .1s}
+.sp-force-base{width:84px;height:34px;border-radius:8px;background:var(--sense-soft);border:2px solid var(--sense)}
+
+/* PLAC: czujnik ruchu */
+.sp-tilt-stage{display:flex;justify-content:center;perspective:520px;margin-bottom:6px}
+.sp-hub{width:150px;height:150px;border-radius:20px;background:var(--panel);border:2px solid var(--ink);box-shadow:0 14px 26px rgba(54,57,65,.18);display:grid;place-items:center;transition:transform .15s;position:relative}
+.sp-hub-grid{display:grid;grid-template-columns:repeat(5,16px);gap:5px}
+.sp-hub-px{width:16px;height:16px;border-radius:4px;background:#ECE8DC}
+.sp-hub-px.on{background:var(--yellow)}
+.sp-hub-btn{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:18px;height:6px;border-radius:4px;background:var(--line)}
+@keyframes sp-shake{0%,100%{translate:0 0}20%{translate:-7px 0}40%{translate:7px 0}60%{translate:-5px 0}80%{translate:5px 0}}
+@keyframes sp-tap{0%,100%{translate:0 0}40%{translate:0 6px}}
+.sp-hub.shake{animation:sp-shake .5s ease}
+.sp-hub.tap{animation:sp-tap .25s ease}
+
+
+@media (prefers-reduced-motion:reduce){
+  .sp-wheel .tread{animation:none!important}
+  .sp-robot,.sp-dial-rotor,.sp-hub{transition:none}
+  .sp-wave{animation:none!important;opacity:0}
+  .sp-hub.shake,.sp-hub.tap{animation:none}
+}
