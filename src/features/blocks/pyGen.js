@@ -107,9 +107,9 @@ function stmtLines(block, ctx) {
 
     // RUCH
     case "move_for_dir": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveForDir(f("DIR"), v("DUR", "1"), f("UNIT"))];
-    case "move_for_steer": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveForSteer(String(f("STEER")), v("DUR", "1"), f("UNIT"))];
+    case "move_for_steer": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveForSteer(v("STEER", "0"), v("DUR", "1"), f("UNIT"))];
     case "move_start_dir": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveStartDir(f("DIR"))];
-    case "move_start_steer": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveStartSteer(String(f("STEER")))];
+    case "move_start_steer": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveStartSteer(v("STEER", "0"))];
     case "move_stop": imp("motor_pair", "port"); ctx.useMove = true; return [H.moveStop()];
     case "move_set_speed": imp("motor_pair", "port"); ctx.useMove = true; ctx.assigned.add("move_speed"); return [H.moveSetSpeed(v("PCT", "50"))];
     case "move_set_motors": { imp("motor_pair", "port"); ctx.useMove = true; ctx.moveExplicitPair = true; const pr = f("PAIR"); ctx.movePair = [pr[0], pr[1]]; return [H.moveSetMotors(pr[0], pr[1])]; }
