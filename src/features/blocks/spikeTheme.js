@@ -6,7 +6,7 @@ import * as Blockly from "blockly";
 export const spikeTheme = Blockly.Theme.defineTheme("spike", {
   base: Blockly.Themes.Classic,
   startHats: true,
-  fontStyle: { family: "Nunito, Fredoka, system-ui, sans-serif", weight: "700", size: 13 },
+  fontStyle: { family: "Nunito, 'Baloo 2', system-ui, sans-serif", weight: "700", size: 13 },
   componentStyles: {
     workspaceBackgroundColour: "#f6f7fb",
     toolboxBackgroundColour: "#ffffff",

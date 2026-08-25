@@ -69,7 +69,7 @@ export function MotorSim() {
           <label>Prędkość (velocity) <span>{vel} °/s</span></label>
           <input className="sp-range" type="range" min="60" max="1050" step="30" value={vel} onChange={(e) => setVel(+e.target.value)} />
         </div>
-        <button className="sp-btn" style={{ background: "var(--motor)", color: "#fff", border: "none", fontFamily: "'Fredoka'", fontSize: 15 }} onClick={run}>
+        <button className="sp-btn" style={{ background: "var(--motor)", color: "#fff", border: "none", fontFamily: "'Baloo 2'", fontSize: 15 }} onClick={run}>
           ▶ Wykonaj obrót
         </button>
       </div>

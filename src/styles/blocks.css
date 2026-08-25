@@ -27,7 +27,7 @@
 .bloki-credit a:hover { text-decoration: underline; }
 .bloki-actions { margin-left: auto; display: flex; gap: 8px; flex: 0 0 auto; }
 .bloki-btn {
-  font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 14px;
+  font-family: 'Baloo 2', sans-serif; font-weight: 500; font-size: 14px;
   cursor: pointer; border: 1px solid var(--line); background: var(--panel);
   color: var(--ink); padding: 8px 16px; border-radius: 11px; transition: .15s;
 }
@@ -62,7 +62,7 @@
   background: var(--code-bg);
 }
 .bloki-code-bar {
-  font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 13px;
+  font-family: 'Baloo 2', sans-serif; font-weight: 500; font-size: 13px;
   color: var(--code-ink); background: rgba(255, 255, 255, .06);
   padding: 9px 14px; border-bottom: 1px solid rgba(255, 255, 255, .08);
   letter-spacing: .02em; flex: 0 0 auto;
@@ -74,10 +74,8 @@
 
 /* Blockly: dopasowanie czcionek/akcentów do reszty strony */
 .bloki-canvas .blocklyToolboxCategory { padding: 5px 10px; }
-/* Nunito zamiast Fredoki: przy małym rozmiarze polskie znaki (ł, ś, ż, ę)
-   są w niej znacznie czytelniejsze */
 .bloki-canvas .blocklyTreeLabel {
-  font-family: 'Nunito', system-ui, sans-serif; font-weight: 800; font-size: 14px;
+  font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 14px;
 }
 .bloki-canvas .blocklyFlyoutBackground { fill: #eef1f7; }
 .bloki-canvas .blocklyMainBackground { stroke: none; }

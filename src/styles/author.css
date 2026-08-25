@@ -14,7 +14,7 @@
 @media (max-width:760px){.sp-author-id{align-items:center;text-align:center}}
 .sp-author-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top;
   box-shadow:0 25px 50px -12px rgba(0,0,0,.5);border:4px solid rgba(255,255,255,.12)}
-.sp-author-name{font-family:'Fredoka',sans-serif;font-weight:600;font-size:clamp(28px,4vw,36px);
+.sp-author-name{font-family:'Baloo 2',sans-serif;font-weight:600;font-size:clamp(28px,4vw,36px);
   letter-spacing:-.01em;margin:24px 0 0;color:#fff}
 .sp-author-tag{margin-top:8px;font-size:12px;font-weight:800;text-transform:uppercase;
   letter-spacing:.45em;color:var(--yellow)}
@@ -40,7 +40,7 @@
 .sp-author-credit b{color:var(--ink);font-weight:700}
 @media (max-width:640px){.sp-author-credit{display:none}}
 .sp-author-btn{display:flex;align-items:center;gap:6px;cursor:pointer;
-  font-family:'Fredoka',sans-serif;font-weight:500;font-size:13px;color:var(--muted);
+  font-family:'Baloo 2',sans-serif;font-weight:500;font-size:13px;color:var(--muted);
   border:1px solid var(--line);padding:5px 12px;border-radius:999px;background:var(--panel);transition:.15s}
 .sp-author-btn:hover{color:var(--ink);border-color:var(--drive)}
 .sp-author-btn .star{color:var(--drive);transition:transform .3s}

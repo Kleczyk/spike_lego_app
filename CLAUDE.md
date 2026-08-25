@@ -97,8 +97,10 @@ quote terminates the string and breaks the build.
 
 One visual language across the whole app — keep it consistent when editing:
 
-- **Fonts:** Fredoka (headings), Nunito (body), JetBrains Mono (code) — Google Fonts `@import` at
-  the top of `styles/global.css`.
+- **Fonts:** Baloo 2 (headings/UI labels), Nunito (body), JetBrains Mono (code) — Google Fonts
+  `@import` at the top of `styles/global.css`. Do NOT switch headings back to Fredoka: the Google
+  Fonts build of Fredoka lacks Polish acute/ogonek glyphs (ś ć ź ż ę ą render as fallback), which
+  is why it was replaced.
 - **Class prefix:** every class is `sp-…`.
 - **Palette** lives in `:root` CSS custom properties — paper background `--bg:#F4F1E9` plus a
   **meaning-coded accent set**: `--motor` amber (single motors), `--drive` blue (driving/movement),

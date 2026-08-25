@@ -3,7 +3,7 @@
    (baza, nagłówek+zakładki, hero, sekcje, karty, kod, słowniczek,
     wspólne komponenty: tabela parametrów, Zaawansowane, wyszukiwarka)
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root{
   --bg:#F4F1E9; --panel:#FFFFFF; --ink:#363941; --muted:#74787F; --line:#E7E1D4;
@@ -18,7 +18,7 @@
 *{box-sizing:border-box}
 .sp-root{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
 .sp-wrap{max-width:960px;margin:0 auto;padding:0 22px}
-h1,h2,h3,h4{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.2;margin:0}
+h1,h2,h3,h4{font-family:'Baloo 2',sans-serif;font-weight:600;line-height:1.2;margin:0}
 p{margin:0}
 a{color:var(--drive)}
 button{font-family:inherit}
@@ -28,12 +28,12 @@ body{margin:0}
 .sp-top{position:sticky;top:0;z-index:30;backdrop-filter:blur(8px);background:rgba(244,241,233,.88);border-bottom:1px solid var(--line)}
 .sp-top-in{max-width:960px;margin:0 auto;padding:10px 22px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .sp-logo{width:34px;height:34px;border-radius:9px;background:var(--yellow);display:grid;place-items:center;flex:0 0 auto;box-shadow:inset 0 -3px 0 rgba(0,0,0,.08)}
-.sp-logo span{font-family:'Fredoka';font-weight:600;color:#5b4a17;font-size:18px}
-.sp-top-title{font-family:'Fredoka';font-weight:500;font-size:16px}
+.sp-logo span{font-family:'Baloo 2';font-weight:600;color:#5b4a17;font-size:18px}
+.sp-top-title{font-family:'Baloo 2';font-weight:500;font-size:16px}
 .sp-badge{margin-left:auto;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);padding:4px 10px;border-radius:999px;background:var(--panel)}
 .sp-tabs{max-width:960px;margin:0 auto;padding:8px 22px 0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 .sp-tabs::-webkit-scrollbar{display:none}
-.sp-tab{font-family:'Fredoka';font-weight:500;font-size:14.5px;cursor:pointer;border:1px solid transparent;border-bottom:none;
+.sp-tab{font-family:'Baloo 2';font-weight:500;font-size:14.5px;cursor:pointer;border:1px solid transparent;border-bottom:none;
   background:transparent;color:var(--muted);padding:9px 16px 11px;border-radius:13px 13px 0 0;white-space:nowrap;transition:.15s;display:flex;gap:7px;align-items:center}
 .sp-tab:hover{color:var(--ink);background:rgba(255,255,255,.55)}
 .sp-tab.act{background:var(--panel);color:var(--ink);border-color:var(--line);box-shadow:0 -3px 10px rgba(120,100,60,.05)}
@@ -52,7 +52,7 @@ body{margin:0}
 /* SEKCJE */
 .sp-sec{padding:30px 0;border-top:1px solid var(--line)}
 .sp-sec-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.sp-pill{font-family:'Fredoka';font-weight:500;font-size:13px;color:#fff;padding:5px 12px;border-radius:999px;background:var(--accent,var(--neutral))}
+.sp-pill{font-family:'Baloo 2';font-weight:500;font-size:13px;color:#fff;padding:5px 12px;border-radius:999px;background:var(--accent,var(--neutral))}
 .sp-sec h2{font-size:26px}
 .sp-sec .sub{color:var(--muted);margin:10px 0 22px;font-size:16.5px;max-width:64ch}
 
@@ -90,14 +90,14 @@ body{margin:0}
 
 /* KROKI */
 .sp-step{display:flex;gap:16px;margin:14px 0}
-.sp-num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--sense);color:#fff;font-family:'Fredoka';font-weight:600;display:grid;place-items:center}
+.sp-num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--sense);color:#fff;font-family:'Baloo 2';font-weight:600;display:grid;place-items:center}
 .sp-step .st{font-weight:700;margin-bottom:2px}
 .sp-step .sd{color:var(--muted);font-size:15px}
 
 /* SŁOWNICZEK */
 .sp-gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:16px}
 .sp-gcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 3px 12px rgba(120,100,60,.04)}
-.sp-gcard .gt{display:flex;align-items:center;gap:9px;font-family:'Fredoka';font-weight:500;font-size:16px;margin-bottom:5px}
+.sp-gcard .gt{display:flex;align-items:center;gap:9px;font-family:'Baloo 2';font-weight:500;font-size:16px;margin-bottom:5px}
 .sp-gcard .ge{font-size:18px}
 .sp-gcard .gd{color:var(--muted);font-size:14px;line-height:1.55}
 
@@ -124,7 +124,7 @@ body{margin:0}
 
 /* ZAAWANSOWANE */
 .sp-adv{border:1px solid var(--line);border-radius:13px;margin:14px 0;background:var(--neutral-soft);overflow:hidden}
-.sp-adv-head{display:flex;align-items:center;gap:9px;width:100%;border:none;background:transparent;cursor:pointer;padding:11px 14px;font-family:'Fredoka';font-weight:500;font-size:14.5px;color:var(--ink);text-align:left}
+.sp-adv-head{display:flex;align-items:center;gap:9px;width:100%;border:none;background:transparent;cursor:pointer;padding:11px 14px;font-family:'Baloo 2';font-weight:500;font-size:14.5px;color:var(--ink);text-align:left}
 .sp-adv-head .ar{margin-left:auto;transition:transform .15s;color:var(--muted);font-size:12px}
 .sp-adv-head .ar.open{transform:rotate(90deg)}
 .sp-adv-body{padding:2px 14px 14px;font-size:14.5px}
