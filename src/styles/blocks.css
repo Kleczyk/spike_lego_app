@@ -74,8 +74,10 @@
 
 /* Blockly: dopasowanie czcionek/akcentów do reszty strony */
 .bloki-canvas .blocklyToolboxCategory { padding: 5px 10px; }
+/* Nunito zamiast Fredoki: przy małym rozmiarze polskie znaki (ł, ś, ż, ę)
+   są w niej znacznie czytelniejsze */
 .bloki-canvas .blocklyTreeLabel {
-  font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 14px;
+  font-family: 'Nunito', system-ui, sans-serif; font-weight: 800; font-size: 14px;
 }
 .bloki-canvas .blocklyFlyoutBackground { fill: #eef1f7; }
 .bloki-canvas .blocklyMainBackground { stroke: none; }
