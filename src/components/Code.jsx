@@ -5,8 +5,8 @@ import React from "react";
 export function Code({ lines, onCopy, id, copied }) {
   const text = lines.map((l) => (typeof l === "string" ? l : l.t)).join("\n");
   const render = (l, i) => {
-    if (typeof l === "string") return <div key={i}>{l || " "}</div>;
-    return <div key={i} className={l.c || ""}>{l.t || " "}</div>;
+    if (typeof l === "string") return <div key={i}>{l || "\u00A0"}</div>;
+    return <div key={i} className={l.c || ""}>{l.t || "\u00A0"}</div>;
   };
   return (
     <div className="sp-code">
@@ -17,4 +17,3 @@ export function Code({ lines, onCopy, id, copied }) {
     </div>
   );
 }
-

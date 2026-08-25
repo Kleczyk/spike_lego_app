@@ -11,11 +11,12 @@ jargon-light.
 
 Deliverables:
 
-- **The "kompendium" web app** (this Vite + React project) — a tabbed page with four tabs:
+- **The "kompendium" web app** (this Vite + React project) — a tabbed page with five tabs:
   **Start** (program basics + glossary), **Mapa modułów** (searchable API tree with a rich detail
   panel: param tables, examples, "Zaawansowane" section), **Plac zabaw** (animated simulators for
   drive steering, single motor, and every sensor — each dictates a live copyable code line),
-  **Przepisy** (searchable "Chcę, żeby robot…" cookbook of complete programs).
+  **Bloki** (a Blockly workspace, Polish locale, that generates a complete SPIKE 3 Python program
+  live), **Przepisy** (searchable "Chcę, żeby robot…" cookbook of complete programs).
 - `SPIKE_Prime_Python_sciaga.docx` / `.pdf` — "ściąga" (cheat sheet). Binary; not generated from
   the app. Edit the `.docx`; the `.pdf` is its exported copy. The PDF is also the source for the
   parameter types/ranges/defaults encoded in `src/data/api.js` (verified against
@@ -24,8 +25,8 @@ Deliverables:
 
 ## Commands
 
-- `npm install` — install dependencies (React 18, Vite 5, `qrcode.react`; no test framework,
-  no linter).
+- `npm install` — install dependencies (React 18, Vite 5, `qrcode.react`, `blockly`; no test
+  framework, no linter).
 - `npm run dev` — dev server with HMR at http://localhost:5173.
 - `npm run build` — production build to `dist/`; `npm run preview` serves that build locally.
 - `docker compose up --build` — build the multi-stage image (node build → nginx) and serve at
@@ -38,7 +39,9 @@ Deliverables:
 ```
 src/
 ├── main.jsx                  # entry: mounts <App/>, imports styles/global.css
-├── App.jsx                   # sticky header + tab bar (useState; ids: start|mapa|plac|przepisy)
+├── App.jsx                   # sticky header + tab bar (useState; ids:
+│                             #   start|mapa|plac|bloki|przepisy; the bloki tab hides the footer
+│                             #   and adds the sp-root--bloki class for full-height layout)
 ├── hooks/useCopy.js          # [copied, copy] — clipboard + 1.6 s "Skopiowano!" state
 ├── components/               # shared: Code, ParamTable, Advanced, MiniTable, LiveLine,
 │                             #   AuthorPanel (fullscreen "O autorze" portal overlay; photo in
@@ -53,10 +56,13 @@ src/
 │   ├── map/                  # MapTab, TreeNode, DetailPanel, treeUtils (nodeVisual/matches)
 │   ├── playground/           # PlaygroundTab + DriveSim, MotorSim, DistanceSim, ColorSim,
 │   │                         #   ForceSim, MotionSim
+│   ├── blocks/               # BlocksTab (Blockly workspace, PL locale) + spikeDefs (BLOCK_DEFS/
+│   │                         #   TOOLBOX), spikeTheme, pyGen (generateProgram/lintProgram),
+│   │                         #   pyHelpers — custom block set that emits SPIKE 3 Python
 │   └── recipes/              # RecipesTab, RecipeCard
-└── styles/                   # global.css (base + shared components), map.css,
-                              #   playground.css, recipes.css, author.css (each imported by
-                              #   the component/tab that uses it)
+└── styles/                   # global.css (base + shared components), map.css, playground.css,
+                              #   recipes.css, blocks.css, author.css (each imported by the
+                              #   component/tab that uses it)
 ```
 
 **To change content, edit `src/data/*`, not components.** Rendering is generic.

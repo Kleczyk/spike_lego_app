@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StartTab } from "./features/start/StartTab.jsx";
 import { MapTab } from "./features/map/MapTab.jsx";
 import { PlaygroundTab } from "./features/playground/PlaygroundTab.jsx";
+import { BlocksTab } from "./features/blocks/BlocksTab.jsx";
 import { RecipesTab } from "./features/recipes/RecipesTab.jsx";
 import { AuthorPanel } from "./components/AuthorPanel.jsx";
 
@@ -10,6 +11,7 @@ const TABS = [
   ["start", "Start", "🏠"],
   ["mapa", "Mapa modułów", "🌳"],
   ["plac", "Plac zabaw", "🎮"],
+  ["bloki", "Bloki", "🧩"],
   ["przepisy", "Przepisy", "🍳"],
 ];
 
@@ -19,7 +21,7 @@ export default function App() {
   const goTab = (t) => { setTab(t); try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (e) {} };
 
   return (
-    <div className="sp-root">
+    <div className={"sp-root" + (tab === "bloki" ? " sp-root--bloki" : "")}>
 
       <header className="sp-top">
         <div className="sp-top-in">
@@ -44,16 +46,19 @@ export default function App() {
         {tab === "start" && <StartTab goTab={goTab} />}
         {tab === "mapa" && <MapTab />}
         {tab === "plac" && <PlaygroundTab />}
+        {tab === "bloki" && <BlocksTab />}
         {tab === "przepisy" && <RecipesTab />}
 
-        <footer className="sp-foot">
-          Na podstawie oficjalnej dokumentacji LEGO® Education SPIKE™ Prime (Python, firmware SPIKE 3).<br />
-          LEGO® i SPIKE™ są znakami towarowymi Grupy LEGO. Materiał pomocniczy, nieoficjalny.
-          <div className="sp-foot-author">
-            Stronę stworzył Daniel Kleczyński —{" "}
-            <button type="button" onClick={() => setAuthorOpen(true)}>o autorze</button>
-          </div>
-        </footer>
+        {tab !== "bloki" && (
+          <footer className="sp-foot">
+            Na podstawie oficjalnej dokumentacji LEGO® Education SPIKE™ Prime (Python, firmware SPIKE 3).<br />
+            LEGO® i SPIKE™ są znakami towarowymi Grupy LEGO. Materiał pomocniczy, nieoficjalny.
+            <div className="sp-foot-author">
+              Stronę stworzył Daniel Kleczyński —{" "}
+              <button type="button" onClick={() => setAuthorOpen(true)}>o autorze</button>
+            </div>
+          </footer>
+        )}
       </main>
 
       <AuthorPanel open={authorOpen} onClose={() => setAuthorOpen(false)} />
