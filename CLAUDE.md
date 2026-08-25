@@ -7,8 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Polish-language teaching materials** for LEGO® Education SPIKE™ Prime programmed in Python
 (firmware "SPIKE 3"). The intended reader is **primary-school teachers with no programming
 background**, so all UI text, code comments, and explanations are in Polish and deliberately
-jargon-light. The directory name itself (`materiały spike`) contains a space and a non-ASCII
-character — quote paths in shell commands.
+jargon-light.
 
 Deliverables:
 
@@ -25,9 +24,10 @@ Deliverables:
 
 ## Commands
 
-- `npm install` — install dependencies (React 18, Vite 5; no test framework, no linter).
+- `npm install` — install dependencies (React 18, Vite 5, `qrcode.react`; no test framework,
+  no linter).
 - `npm run dev` — dev server with HMR at http://localhost:5173.
-- `npm run build` — production build to `dist/`.
+- `npm run build` — production build to `dist/`; `npm run preview` serves that build locally.
 - `docker compose up --build` — build the multi-stage image (node build → nginx) and serve at
   **http://localhost:6767** (container `spike-kompendium`).
 - `cloudflared tunnel --url http://localhost:6767` — quick public link (trycloudflare.com) for
@@ -41,7 +41,8 @@ src/
 ├── App.jsx                   # sticky header + tab bar (useState; ids: start|mapa|plac|przepisy)
 ├── hooks/useCopy.js          # [copied, copy] — clipboard + 1.6 s "Skopiowano!" state
 ├── components/               # shared: Code, ParamTable, Advanced, MiniTable, LiveLine,
-│                             #   AuthorPanel (fullscreen "O autorze" overlay; photo in public/)
+│                             #   AuthorPanel (fullscreen "O autorze" portal overlay; photo in
+│                             #   public/, QR code via qrcode.react, styles in author.css)
 ├── data/                     # ★ SINGLE SOURCE OF TRUTH for all content
 │   ├── api.js                # the API tree + node constructors (p/fn/cst/funcs/consts)
 │   ├── constants.js          # STOP_FLAGS, DIRECTIONS, STATUSES, ACC accent map, STOP_OPTS
@@ -54,7 +55,8 @@ src/
 │   │                         #   ForceSim, MotionSim
 │   └── recipes/              # RecipesTab, RecipeCard
 └── styles/                   # global.css (base + shared components), map.css,
-                              #   playground.css, recipes.css (imported by their tab)
+                              #   playground.css, recipes.css, author.css (each imported by
+                              #   the component/tab that uses it)
 ```
 
 **To change content, edit `src/data/*`, not components.** Rendering is generic.

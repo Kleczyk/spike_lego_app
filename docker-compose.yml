@@ -4,4 +4,4 @@ services:
     container_name: spike-kompendium
     ports:
       - "6767:80"
-    restart: unless-stopped
+    restart: always
